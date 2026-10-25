@@ -46,8 +46,20 @@ export function AgentPanel() {
       </div>
 
       <div className={styles.input}>
+        <div className={styles.quota}>
+          <span className={styles.quotaDot} />
+          <span className={styles.quotaText}>47 requêtes vocales restantes</span>
+        </div>
         <div className={styles.inputRow}>
           <input type="text" placeholder="Parler à Maya…" />
+          <button className={styles.mic} aria-label="Dicter">
+            <svg width="11" height="14" viewBox="0 0 11 14" fill="none">
+              <rect x="3.5" y="1" width="4" height="7" rx="2" stroke="currentColor" strokeWidth="1.2"/>
+              <path d="M1 7.5C1 10.5 10 10.5 10 7.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/>
+              <line x1="5.5" y1="11" x2="5.5" y2="13" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/>
+              <line x1="3.5" y1="13" x2="7.5" y2="13" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/>
+            </svg>
+          </button>
           <button className={styles.send} aria-label="Envoyer">
             <svg width="9" height="9" viewBox="0 0 9 9" fill="none">
               <path d="M1 8L8 4.5 1 1v3l5 .5-5 .5V8z" fill="#0D0D1A" />

@@ -90,19 +90,45 @@
 }
 
 .input {
-  padding: 10px 10px 12px;
+  padding: 8px 10px 12px;
   border-top: 1px solid var(--border);
+}
+
+.quota {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 6px;
+}
+
+.quotaDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--cyan);
+  box-shadow: 0 0 5px var(--cyan);
+  flex-shrink: 0;
+}
+
+.quotaText {
+  font-size: 9.5px;
+  color: var(--fg-dim);
 }
 
 .inputRow {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 4px;
   background: var(--surface2);
   border: 1px solid var(--border);
   border-radius: var(--r-md);
-  padding: 0 8px 0 10px;
-  height: 32px;
+  padding: 0 6px 0 10px;
+  height: 34px;
+  transition: border-color 0.15s;
+}
+
+.inputRow:focus-within {
+  border-color: rgba(0, 200, 255, 0.35);
 }
 
 .inputRow input {
@@ -119,9 +145,37 @@
   color: var(--fg-dim);
 }
 
+.mic {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: none;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--fg-dim);
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+
+.mic:hover {
+  color: var(--cyan);
+  border-color: rgba(0, 200, 255, 0.4);
+  background: rgba(0, 200, 255, 0.06);
+}
+
+.mic.recording {
+  color: var(--cyan);
+  border-color: var(--cyan);
+  background: rgba(0, 200, 255, 0.12);
+  box-shadow: 0 0 8px rgba(0, 200, 255, 0.35);
+}
+
 .send {
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   border-radius: var(--r-sm);
   background: var(--cyan);
   border: none;

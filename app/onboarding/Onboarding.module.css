@@ -1,0 +1,378 @@
+.root {
+  min-height: 100vh;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+}
+
+.card {
+  width: 100%;
+  max-width: 480px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 36px;
+}
+
+.logoMark {
+  width: 32px;
+  height: 32px;
+  border-radius: 7px;
+  background: var(--grad-135);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  font-family: var(--font-heading);
+  flex-shrink: 0;
+}
+
+.logoName {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  font-family: var(--font-heading);
+  color: var(--fg);
+}
+
+.logoSub {
+  font-size: 10px;
+  color: var(--fg-dim);
+  margin-top: 1px;
+}
+
+.steps {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-bottom: 32px;
+  position: relative;
+}
+
+.stepLine {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  height: 1px;
+  background: var(--border);
+  z-index: 0;
+}
+
+.stepDot {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--fg-dim);
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+  transition: all 0.2s;
+}
+
+.stepDot:not(:last-child) {
+  margin-right: auto;
+}
+
+.stepActive {
+  background: var(--cyan);
+  border-color: var(--cyan);
+  color: var(--noir);
+  box-shadow: 0 0 10px rgba(0, 200, 255, 0.4);
+}
+
+.stepDone {
+  background: var(--cyan);
+  border-color: var(--cyan);
+}
+
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-xl);
+  padding: 28px 28px 24px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--fg);
+  font-family: var(--font-heading);
+  margin: 0 0 8px;
+}
+
+.sub {
+  font-size: 13px;
+  color: var(--fg-muted);
+  line-height: 1.6;
+  margin: 0 0 20px;
+}
+
+.urlForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.urlField {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  padding: 0 12px;
+  height: 42px;
+  transition: border-color 0.15s;
+}
+
+.urlField:focus-within {
+  border-color: var(--cyan);
+}
+
+.urlIcon {
+  color: var(--fg-dim);
+  flex-shrink: 0;
+}
+
+.urlField input {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 13px;
+  color: var(--fg);
+  font-family: var(--font-body);
+}
+
+.urlField input::placeholder {
+  color: var(--fg-dim);
+}
+
+.btnPrimary {
+  height: 42px;
+  border-radius: var(--r-md);
+  background: var(--cyan);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--noir);
+  font-family: var(--font-heading);
+  transition: opacity 0.15s;
+}
+
+.btnPrimary:hover:not(:disabled) {
+  opacity: 0.88;
+}
+
+.btnPrimary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btnSecondary {
+  height: 42px;
+  border-radius: var(--r-md);
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--fg-muted);
+  font-family: var(--font-heading);
+  padding: 0 18px;
+  transition: color 0.15s;
+}
+
+.btnSecondary:hover {
+  color: var(--fg);
+}
+
+.btnRow {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.btnRow .btnPrimary {
+  flex: 1;
+}
+
+.hint {
+  font-size: 10.5px;
+  color: var(--fg-dim);
+  text-align: center;
+  margin: 4px 0 0;
+}
+
+.loader {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(13, 13, 26, 0.3);
+  border-top-color: var(--noir);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.brandCard {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  padding: 14px;
+  margin-bottom: 4px;
+}
+
+.brandHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.brandAvatar {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--r-sm);
+  background: var(--grad-135);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 700;
+  color: #fff;
+  font-family: var(--font-heading);
+  flex-shrink: 0;
+}
+
+.brandName {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--fg);
+  font-family: var(--font-heading);
+}
+
+.brandTagline {
+  font-size: 10px;
+  color: var(--fg-dim);
+  margin-top: 1px;
+}
+
+.brandRows {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.brandRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.brandLabel {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-dim);
+  width: 60px;
+  flex-shrink: 0;
+}
+
+.brandValue {
+  font-size: 11px;
+  color: var(--fg-muted);
+}
+
+.swatches {
+  display: flex;
+  gap: 4px;
+}
+
+.swatch {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  display: block;
+}
+
+.successIcon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(0, 200, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.agentsReady {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  padding: 10px;
+  margin: 16px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.agentRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.agentDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.agentName {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--fg);
+  font-family: var(--font-heading);
+  width: 36px;
+  flex-shrink: 0;
+}
+
+.agentRole {
+  font-size: 10.5px;
+  color: var(--fg-dim);
+  flex: 1;
+}
+
+.agentStatus {
+  font-size: 9.5px;
+  color: var(--fg-dim);
+}
